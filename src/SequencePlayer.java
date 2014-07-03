@@ -10,6 +10,7 @@ public abstract class SequencePlayer extends FilePlayer {
 			
 		}
 	}
+	
 	public abstract List<BufferedImage> getImages(); 
 
 }
