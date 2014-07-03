@@ -7,13 +7,16 @@ import javax.imageio.ImageIO;
 
 public class PicturePlayer extends FilePlayer {
 	
-	private int height;
-	private int width;
-	BufferedImage image;
+	private BufferedImage image;
+	private int scale;
 
 	public PicturePlayer(File path) throws IOException {
 		super.path = path;
 		BufferedImage image = ImageIO.read(path);
+	}
+
+	public void setScale(int scale) {
+
 	}
 	@Override
 	public void play() {
