@@ -17,7 +17,7 @@ public class PicturePlayer extends FilePlayer {
 	public PicturePlayer(File path, int consoleCols) throws IOException {
 		super.path = path;
 		this.consoleCols = consoleCols;
-		image = ImageIO.read(path);
+		image = ImageIO.read(super.path);
 	}
 
 	public void setConsoleColumns(int cols) {
