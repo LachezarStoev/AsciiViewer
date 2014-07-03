@@ -3,7 +3,9 @@ import java.awt.image.BufferedImage;
 
 
 public class RenderUtils {
-	public static int intensity(int x, int y, BufferedImage image) {
+	public static int CONSOLECOLUMNS = 150;
+
+	private static int intensity(int x, int y, BufferedImage image) {
 		Color col = new Color(image.getRGB(y, x), false);
 		int red = col.getRed();
 		int blue = col.getBlue();
@@ -12,7 +14,7 @@ public class RenderUtils {
 		return intensity;
 	}
 
-	public static int getIntensitySubmatrix(int x, int y, int scale,
+	private static int getIntensitySubmatrix(int x, int y, int scale,
 			BufferedImage image) {
 		int intensity = 0;
 		for (int i = x; i < x + scale; i++) {
@@ -24,7 +26,7 @@ public class RenderUtils {
 
 	}
 
-	public static void printSymbol(int intensity) {
+	private static void printSymbol(int intensity) {
 		if (intensity > 240) {
 			System.out.print(" ");
 		} else if (intensity > 200) {
@@ -40,7 +42,29 @@ public class RenderUtils {
 		}
 	}
 
-	public static void printImage(BufferedImage image, int consoleCols) {
-
+	public static void printImage(BufferedImage image) {
+		printImage(image, CONSOLECOLUMNS);
 	}
+
+	private static void printImage(BufferedImage image, int consoleCols) {
+		int height = image.getHeight();
+		int width = image.getWidth();
+		int scale = width / consoleCols;
+		if (scale == 0) {
+			scale = 1;
+		} else if (width % consoleCols != 0) {
+			scale += 1;
+		}
+		for (int i = 0; i < height; i += scale) {
+			for (int j = 0; j < width; j += scale) {
+				if (i + scale < height && j + scale < width) {
+					printSymbol(getIntensitySubmatrix(i, j, scale, image));
+				}
+
+			}
+			System.out.println();
+		}
+	}
+	
+
 }
