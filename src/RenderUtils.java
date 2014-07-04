@@ -3,7 +3,7 @@ import java.awt.image.BufferedImage;
 
 
 public class RenderUtils {
-	public static int CONSOLECOLUMNS = 150;
+	public static int CONSOLECOLUMNS = 250;
 
 	private static int intensity(int x, int y, BufferedImage image) {
 		Color col = new Color(image.getRGB(y, x), false);
@@ -38,7 +38,7 @@ public class RenderUtils {
 		} else if (intensity > 80) {
 			System.out.print("X");
 		} else {
-			System.out.print("M");
+			System.out.print("$");
 		}
 	}
 

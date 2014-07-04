@@ -2,5 +2,7 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="lib" path="libs/jcodec-0.1.5.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/jline-1.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

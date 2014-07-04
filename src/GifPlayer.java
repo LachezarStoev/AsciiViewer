@@ -1,8 +1,13 @@
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.util.List;
 
 
 public class GifPlayer extends SequencePlayer {
+
+	public GifPlayer(File path) {
+		super(path);
+	}
 
 	@Override
 	public List<BufferedImage> getImages() {

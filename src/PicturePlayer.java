@@ -9,7 +9,7 @@ public class PicturePlayer extends FilePlayer {
 	private BufferedImage image;
 
 	public PicturePlayer(File path) throws IOException {
-		super.path = path;
+		super(path);
 		image = ImageIO.read(super.path);
 	}
 
