@@ -12,7 +12,9 @@ How to run?
 In folder /build, download the jar file and write on the console:
 
 java -jar AsciiViewer.jar $1
+
 $1 - your path of your picture/video
+
 
 
 
