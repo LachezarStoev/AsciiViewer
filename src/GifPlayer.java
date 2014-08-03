@@ -1,6 +1,4 @@
-import java.awt.image.BufferedImage;
 import java.io.File;
-import java.util.List;
 
 
 public class GifPlayer extends SequencePlayer {
@@ -10,9 +8,8 @@ public class GifPlayer extends SequencePlayer {
 	}
 
 	@Override
-	public List<BufferedImage> getImages() {
-		// TODO Auto-generated method stub
-		return null;
+	public void loadingImages() {
+
 	}
 
 }

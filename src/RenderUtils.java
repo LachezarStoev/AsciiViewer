@@ -3,7 +3,7 @@ import java.awt.image.BufferedImage;
 
 
 public class RenderUtils {
-	public static int CONSOLECOLUMNS = 250;
+	public static final int CONSOLECOLUMNS = 150;
 
 	private static int intensity(int x, int y, BufferedImage image) {
 		Color col = new Color(image.getRGB(y, x), false);
@@ -27,18 +27,18 @@ public class RenderUtils {
 	}
 
 	private static void printSymbol(int intensity) {
-		if (intensity > 240) {
-			System.out.print(" ");
-		} else if (intensity > 200) {
-			System.out.print(".");
-		} else if (intensity > 160) {
-			System.out.print("*");
-		} else if (intensity > 120) {
-			System.out.print("+");
-		} else if (intensity > 80) {
-			System.out.print("X");
+		if (intensity > 210) {
+			System.out.print("  ");
+		} else if (intensity > 170) {
+			System.out.print("..");
+		} else if (intensity > 130) {
+			System.out.print("--");
+		} else if (intensity > 90) {
+			System.out.print("**");
+		} else if (intensity > 50) {
+			System.out.print("$$");
 		} else {
-			System.out.print("$");
+			System.out.print("##");
 		}
 	}
 
