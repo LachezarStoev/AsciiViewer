@@ -16,6 +16,9 @@ public class Main {
 		} else if (fileExtention.equals("gif")) {
 			player = new GifPlayer(new File(args[0]));
 		}
+		
+//		player = new GifPlayer(new File("/home/svetla/tmp/parrot.gif"));
+				
 		player.play();
 	}
 
